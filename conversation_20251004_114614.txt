@@ -1,0 +1,46 @@
+[11:45:04] You (Python): program to reverse a string
+[11:45:04] AI Response:
+Here are a few simple ways to reverse a string in Python, with short explanations. Pick the one you prefer.
+
+1) Using slicing (shortest and most common)
+```python
+def reverse_string(s: str) -> str:
+    return s[::-1]
+
+# Example
+if __name__ == "__main__":
+    text = input("Enter a string: ")
+    print("Reversed:", reverse_string(text))
+```
+Explanation: s[start:stop:step] with step = -1 iterates the string from end to start. Time O(n), space O(n).
+
+2) Using reversed() and join
+```python
+def reverse_with_reversed(s: str) -> str:
+    return "".join(reversed(s))
+
+# Example
+print(reverse_with_reversed("hello"))  # output: "olleh"
+```
+Explanation: reversed(s) returns an iterator yielding characters in reverse; join builds the reversed string.
+
+3) Using an explicit loop (manual)
+```python
+def reverse_loop(s: str) -> str:
+    chars = []
+    for ch in s:
+        chars.insert(0, ch)          # or append and reverse at end
+    return "".join(chars)
+
+# More efficient loop: append and reverse at end
+def reverse_loop_efficient(s: str) -> str:
+    chars = []
+    for ch in s:
+        chars.append(ch)
+    chars.reverse()
+    return "".join(chars)
+```
+Explanation: Builds characters in reverse order; inserting at front is O(n^2) overall, so prefer append + reverse.
+
+All methods produce the same result; slicing (method 1) is the simplest and fastest for most use cases.
+

@@ -1,0 +1,12 @@
+Here are a few simple ways to reverse a string in Python, with short explanations. Pick the one you prefer.
+
+1) Using slicing (shortest and most common)
+```python
+def reverse_string(s: str) -> str:
+    return s[::-1]
+
+# Example
+if __name__ == "__main__":
+    text = input("Enter a string: ")
+    print("Reversed:", reverse_string(text))
+```
